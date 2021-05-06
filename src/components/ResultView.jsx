@@ -1,27 +1,36 @@
 import React from "react";
 
 import TextField from '@material-ui/core/TextField';
-import Pagination from '@material-ui/lab/Pagination';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import ResultOutput from "./ResultOutput";
 
 function ResultView({getResults, search, newSearch, page, selectPage, apiData}) {
     return (
     <div >
-    <h1>Search</h1>
+      <header>
+        
+        <form data-testid="new-form" action="" onSubmit={getResults}>
+        <GitHubIcon style={{ fontSize: 50 }}/> <TextField inputProps={{ "data-testid": "newInput" }} id="outlined-basic" variant="outlined" value={search} onChange={newSearch}/>
+        </form>
+      </header>
+   
  
-    <form action="" onSubmit={getResults}>
-    <TextField id="outlined-basic"  variant="outlined" value={search} onChange={newSearch}/>
-    </form>
-    <Pagination count={100} variant="outlined" shape="rounded" page={page} onChange={selectPage} />
+    
+    
  
-   {!search ? <p>Por favor, insira uma busca</p> : 
+   {!search? <p data-testid="messageInitial">Por favor, insira uma busca</p> : 
+   <div data-testid="newresult"> 
     <ResultOutput
+            
              apiData={apiData}
+             page={page} 
+             selectPage={selectPage}
              
            />
-   
+   </div>
    }
+   
    </div>
     )
 };

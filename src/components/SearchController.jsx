@@ -35,11 +35,16 @@ function getResults(event) {
 
    const apiUrl2 =`https://api.github.com/search/repositories?q=${search}&per_page=10&page=${value}`
 
+
+   if (!search) {
+       return
+   } else {
    fetch(apiUrl2)
          .then((res) => res.json())
           .then((data) => setApiData(data.items))
       console.log("selectpage = " + apiUrl2)
  }
+}
 
  function newSearch(event) {
    setSearch(event.target.value)
@@ -48,8 +53,9 @@ function getResults(event) {
 
 
 return (
-    
+
   <ResultView
+    search={search}
     newSearch={newSearch}
     apiData={apiData}
     getResults={getResults}

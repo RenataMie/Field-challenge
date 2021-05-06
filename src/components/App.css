@@ -1,0 +1,27 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    width: 80vw;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.card {
+    margin: 50px auto;
+    width: 50vw;
+}
+
+.cardResult{
+    margin: 10px;
+    text-align: left;
+}
+
+.details{
+    white-space: pre;
+}
+
+.pagination {
+    margin: 20px 0 10px 200px;
+    width: 50vw;
+    align-items: center;
+    
+}
