@@ -20,8 +20,35 @@ body {
 }
 
 .pagination {
-    margin: 20px 0 10px 200px;
-    width: 50vw;
-    align-items: center;
+    margin: 20px 0 10px 180px;
+}
+
+@media (max-width: 768px) {
+
+    .card {
+        width: 70vw;
+    }
+
+    .pagination {
+        margin-left: 100px; 
+    }
+}
+
+@media (max-width: 480px) {
+
     
+
+    p{
+        font-size: 12px;
+    }
+
+    .card {
+        width: 90vw;
+        margin: 50px -15px ;
+    }
+
+    .pagination {
+        width: 100vw;
+        margin-left: -10px; 
+    }
 }
